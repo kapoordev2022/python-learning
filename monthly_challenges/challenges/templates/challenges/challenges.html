@@ -1,16 +1,19 @@
-<!DOCTYPE html> 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{ month_name | title }} Challenges</title>
-    </head>
-    <body>
-        <h1>{{ month_name | title }} Challenge</h1>
-        {% if text is not None %}
-        <h3>{{ text }}</h3>
-        {% else %}
-        <h2>No challenge found for this month.</h2>
-        {% endif %}
-    </body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "challenges/challenges.css" %}">
+{% endblock %}
+
+{% block page_title %}
+    {{ month_name | title }} Challenges
+{% endblock %}
+{% block content %}
+    {% include "challenges/includes/header.html" with active_page="challenge" %}
+    <h1>{{ month_name | title }} Challenge</h1>
+    {% if text is not None %}
+    <h3>{{ text }}</h3>
+    {% else %}
+    <h2>No challenge found for this month.</h2>
+    {% endif %}
+{% endblock %}
