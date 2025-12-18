@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.template.loader import render_to_string
 
 monthly_challenges = {
-    "january": "Hello, January!",
+    "january": None,
     "february": "Hello, February!",
     "march": "Hello, March!",
     "april": "Hello, April!",
