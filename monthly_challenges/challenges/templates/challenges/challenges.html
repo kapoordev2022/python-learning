@@ -6,11 +6,7 @@
         <title>Monthly Challenges</title>
     </head>
     <body>
-        <h1>Monthly Challenges</h1>
-        <ul>
-            {% for month in months %}
-                <li><a href="{% url 'month-challenge' month %}">{{ month }}</a></li>
-            {% endfor %}
-        </ul>
+        <h1>{{ month_name | title }} Challenge</h1>
+        <h3>{{ text }}</h3>
     </body>
 </html>
